@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="사용자의 문제를 발견하고 끝까지 구현하는 개발자 심승아의 포트폴리오" />
+    <title>Sim Seungah — Portfolio</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <style>
+      #root:empty::before{content:"SIM SEUNGAH — PORTFOLIO";position:fixed;inset:0;display:grid;place-items:center;background:#0b1010;color:#62e4d2;font:600 20px/1 sans-serif;letter-spacing:.12em}
+    </style>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="wordmark" href="#top">SIM<br>SEUNGAH</a>
+        <nav><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+        <button class="theme" type="button" onclick="document.documentElement.dataset.theme=document.documentElement.dataset.theme==='light'?'dark':'light'"><span>MODE</span><i></i></button>
+      </header>
+      <main id="top">
+        <section class="hero">
+          <div class="signal"><i></i><i></i><i></i></div>
+          <p class="kicker">FULL-STACK DEVELOPER · BUSAN, KR</p>
+          <h1>복잡한 문제를<br><em>분명한 경험</em>으로.</h1>
+          <div class="hero-bottom"><p>사용자의 문제를 발견하고, 화면과 데이터의 흐름을 설계해 끝까지 구현합니다.</p><a href="#work" class="round-link">↓</a></div>
+        </section>
+        <section class="work" id="work">
+          <div class="section-heading"><p>SELECTED WORK</p><span>2025 — 2026</span></div>
+          <article class="featured-card">
+            <div class="project-copy">
+              <div><span class="project-no">01</span><span class="project-type">TEAM PROJECT · 2026</span></div>
+              <h2>DOGO<span class="dot cyan">.</span></h2><h3>Find it again.</h3>
+              <p>분실물·실종자·실종동물을 하나의 위치 기반 흐름으로 연결했습니다. 자동 매칭과 실시간 소통으로 다시 찾는 시간을 줄입니다.</p>
+              <dl><div><dt>ROLE</dt><dd>로그인 · 회원가입 · 마이페이지 · 관리자 페이지</dd></div><div><dt>FOCUS</dt><dd>Authentication · Account · User Management · Admin</dd></div></dl>
+            </div>
+            <button class="project-visual" type="button" id="open-dogo"><div class="browser-bar"><i></i><i></i><i></i><span>dogo / lost &amp; found network</span></div><img src="/images/dogo-home.png?v=2" alt="DOGO 서비스 메인 화면"><span class="visual-label">CLICK TO VIEW CASE STUDY ↗</span></button>
+          </article>
+          <div class="main-project-finish">
+            <span>DOGO · TEAM PROJECT · 2026</span>
+            <nav><a href="https://mahoora0.github.io/dogo/" target="_blank">VIEW PROJECT <b>↗</b></a><a href="https://github.com/mahoora0/dogo" target="_blank">GITHUB <b>↗</b></a></nav>
+          </div>
+          <div class="project-grid">
+            <article class="project-card amber"><div class="card-top"><span>02</span><span>TEAM PROJECT · IN DEVELOPMENT</span></div><div class="card-mark"><i></i><i></i><i></i></div><h2>POPQ<span>.</span></h2><h3>Scan. Order. Enjoy.</h3><p>팝업스토어와 행사 현장에서 QR 하나로 메뉴 확인부터 주문까지 이어지는 현장형 주문 서비스입니다.</p><div class="stack"><span>Flutter</span><span>React</span><span>Spring</span><span>QR Order</span></div><a href="https://github.com/choffice/project__popq" target="_blank">EXPLORE ↗</a></article>
+            <article class="project-card violet"><div class="card-top"><span>03</span><span>PERSONAL PROJECT · WIP</span></div><div class="card-mark"><i></i><i></i><i></i></div><h2>FlowBoard<span>.</span></h2><h3>Ideas in motion.</h3><p>흩어진 개발 기록과 회의 내용을 보드 위에서 연결해 프로젝트의 흐름을 보여주는 협업 공간입니다.</p><div class="stack"><span>Dev Notes</span><span>Meeting</span><span>Board</span><span>Collaboration</span></div><a href="https://github.com/SimSeungAh/FlowBoard" target="_blank">EXPLORE ↗</a></article>
+            <article class="project-card pink"><div class="card-top"><span>04</span><span>PERSONAL PROJECT · CONCEPT</span></div><div class="card-mark"><i></i><i></i><i></i></div><h2>EchoSnap<span>.</span></h2><h3>See. Sort. Share.</h3><p>카메라로 재활용품을 인식하고 지역 배출 정보와 이웃 소식을 연결하는 생활 밀착형 앱입니다.</p><div class="stack"><span>Camera</span><span>AI Vision</span><span>Local Alert</span><span>Community</span></div><a href="https://github.com/SimSeungAh/Smart-Recycle" target="_blank">EXPLORE ↗</a></article>
+          </div>
+        </section>
+        <section class="about" id="about"><div><p class="kicker">ABOUT / APPROACH</p><h2>기능을 만드는 데서<br>멈추지 않습니다.</h2></div><div class="about-copy"><p>왜 필요한지부터 묻고, 사용자가 자연스럽게 목적에 도달할 수 있도록 구조를 다듬습니다. 낯선 기술도 직접 부딪치며 프로젝트에 맞는 답을 찾습니다.</p><div class="principles"><span><b>01</b>사용자 흐름부터 설계</span><span><b>02</b>화면과 서버를 함께 이해</span><span><b>03</b>기록하고 개선하는 개발</span></div></div></section>
+        <section class="skills"><p class="kicker">TOOLBOX</p><div class="skill-list"><span>JAVA</span><span>SPRING BOOT</span><span>REACT</span><span>JAVASCRIPT</span><span>MYSQL</span><span>WEBSOCKET</span><span>GIT</span><span>FIGMA</span></div></section>
+      </main>
+      <footer id="contact"><p>HAVE A PROJECT IN MIND?</p><h2>좋은 문제를 함께<br>풀어보고 싶습니다<span>.</span></h2><div class="footer-row"><a href="mailto:hello@example.com">hello@example.com ↗</a><a href="https://github.com/SimSeungAh" target="_blank">GITHUB ↗</a><span>© 2026 SIM SEUNGAH</span></div></footer>
+    </div>
+    <section class="project-overlay" id="dogo-overlay" aria-hidden="true" aria-labelledby="overlay-title">
+      <header class="overlay-header"><span>PROJECT / 01 · CASE STUDY</span><button type="button" id="close-dogo" aria-label="상세 화면 닫기">×</button></header>
+      <div class="overlay-body">
+        <div class="overlay-title"><p>TEAM PROJECT · 2026</p><h2 id="overlay-title">DOGO<span>.</span></h2><h3>Find it again.</h3></div>
+        <div class="overlay-lead"><strong>서비스의 입구부터<br><em>사용자와 운영 경험</em>까지.</strong><p>DOGO에서 로그인·회원가입·마이페이지와 관리자 페이지를 담당했습니다. 인증 이후의 개인 계정 관리부터 운영자의 서비스 관리 흐름까지 구현했습니다.</p></div>
+        <div class="overlay-points"><article><b>01 / AUTHENTICATION</b><p>로그인과 세션 흐름을 구성하고 인증 상태에 따른 사용자 접근을 처리했습니다.</p></article><article><b>02 / MEMBERSHIP</b><p>회원가입 입력과 검증 흐름을 설계해 사용자가 자연스럽게 가입을 완료하도록 구현했습니다.</p></article><article><b>03 / MY PAGE</b><p>사용자가 자신의 계정과 활동 정보를 확인하고 관리할 수 있는 마이페이지를 구현했습니다.</p></article><article><b>04 / ADMIN</b><p>관리자 대시보드와 관리 화면을 구성해 회원과 서비스 데이터를 효율적으로 확인하도록 했습니다.</p></article></div>
+        <section class="ownership"><span>MY CONTRIBUTION</span><strong>로그인 · 회원가입 · 마이페이지 · 관리자 페이지</strong><p>아래 화면은 DOGO 프로젝트에서 직접 담당한 영역입니다.</p></section>
+        <section class="overlay-gallery contribution-gallery"><figure><img src="/images/dogo-login.png?v=2" alt="DOGO 로그인 화면"><figcaption><b>01</b> 로그인 — 담당 화면</figcaption></figure><figure><img src="/images/dogo-join.png?v=2" alt="DOGO 회원가입 화면"><figcaption><b>02</b> 회원가입 — 담당 화면</figcaption></figure><figure><img src="/images/dogo-my-page.png?v=1" alt="DOGO 마이페이지 화면"><figcaption><b>03</b> 마이페이지 — 담당 화면</figcaption></figure><figure><img src="/images/dogo-admin-dashboard.png?v=3" alt="DOGO 관리자 대시보드"><figcaption><b>04</b> 관리자 대시보드 — 담당 화면</figcaption></figure></section>
+        <div class="overlay-keywords"><span>LOCATION FIRST</span><i></i><span>AUTO MATCHING</span><i></i><span>REALTIME CHAT</span><i></i><span>SAFER CONNECTION</span></div>
+        <div class="overlay-stack"><span>JAVA 17</span><span>SPRING BOOT</span><span>MYSQL</span><span>WEBSOCKET</span><span>KAKAO MAP</span></div>
+        <footer class="project-finish"><div><p>EXPLORE THE PROJECT</p><h3>더 자세한 결과물을<br>확인해 보세요<span>.</span></h3></div><nav><a href="https://mahoora0.github.io/dogo/" target="_blank">VIEW PROJECT <b>↗</b></a><a href="https://github.com/mahoora0/dogo" target="_blank">GITHUB <b>↗</b></a></nav></footer>
+      </div>
+    </section>
+    <script>
+      const projectOverlay=document.getElementById('dogo-overlay');
+      const openDogo=document.getElementById('open-dogo');
+      const closeDogo=document.getElementById('close-dogo');
+      function showDogo(){projectOverlay.classList.add('open');projectOverlay.setAttribute('aria-hidden','false');document.body.classList.add('overlay-open');closeDogo.focus()}
+      function hideDogo(){projectOverlay.classList.remove('open');projectOverlay.setAttribute('aria-hidden','true');document.body.classList.remove('overlay-open');openDogo.focus()}
+      openDogo.addEventListener('click',showDogo);closeDogo.addEventListener('click',hideDogo);document.addEventListener('keydown',event=>{if(event.key==='Escape'&&projectOverlay.classList.contains('open'))hideDogo()});
+    </script>
+  </body>
+</html>
