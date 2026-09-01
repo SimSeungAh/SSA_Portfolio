@@ -499,3 +499,62 @@ html:not([data-theme="light"]) .flow-case-board>header span{color:#aaa3bd}
   .tech-groups b{padding-top:0;font-size:10px}
   .tech-groups span{padding:10px 12px;font-size:10px}
 }
+
+/* Clickable ERD maps and table-name detail dialog. */
+.entity-map[data-erd-project]{cursor:pointer;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.entity-map[data-erd-project]:hover,.entity-map[data-erd-project]:focus-visible{transform:translateY(-3px);border-color:color-mix(in srgb,var(--entity-color) 72%,var(--line));box-shadow:inset 0 0 55px color-mix(in srgb,var(--entity-color) 7%,transparent),0 22px 55px rgba(0,0,0,.14);outline:none}
+.entity-map[data-erd-project] .entity-map-head>span:after{content:" · OPEN ↗";color:var(--entity-color)}
+.erd-modal{--erd-accent:var(--cyan);position:fixed;inset:0;z-index:500;display:grid;place-items:center;padding:clamp(18px,4vw,56px);visibility:hidden;opacity:0;transition:opacity .25s ease,visibility .25s}
+.erd-modal.open{visibility:visible;opacity:1}
+.erd-modal-backdrop{position:absolute;inset:0;background:rgba(3,8,7,.78);backdrop-filter:blur(14px)}
+.erd-modal-panel{position:relative;width:min(1180px,100%);max-height:min(820px,92vh);overflow:auto;border:1px solid color-mix(in srgb,var(--erd-accent) 55%,var(--line));background:var(--bg);box-shadow:0 35px 100px rgba(0,0,0,.45),0 0 42px color-mix(in srgb,var(--erd-accent) 12%,transparent)}
+.erd-modal[data-project="dogo"]{--erd-accent:var(--dogo-blue)}.erd-modal[data-project="popq"]{--erd-accent:var(--amber)}.erd-modal[data-project="flowboard"]{--erd-accent:var(--violet)}.erd-modal[data-project="echo"]{--erd-accent:var(--pink)}
+.erd-modal-panel>header{min-height:105px;padding:24px clamp(24px,4vw,52px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--erd-accent) 6%,var(--surface))}
+.erd-modal-panel header span{color:var(--erd-accent);font:600 10px 'Space Grotesk';letter-spacing:.17em}.erd-modal-panel header h2{margin:8px 0 0;font:600 clamp(28px,4vw,48px) 'Space Grotesk';letter-spacing:-.045em}.erd-modal-panel header button{width:46px;height:46px;border:1px solid var(--line);border-radius:50%;background:var(--surface);color:var(--text);font-size:27px;cursor:pointer}.erd-modal-panel header button:hover{background:var(--erd-accent);border-color:var(--erd-accent);color:#fff}
+.erd-modal-content{padding:clamp(28px,5vw,62px)}.erd-modal-content>p{margin:0 0 34px;color:var(--muted);font-size:14px}.erd-table-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;background-image:linear-gradient(color-mix(in srgb,var(--erd-accent) 6%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--erd-accent) 6%,transparent) 1px,transparent 1px);background-size:30px 30px}.erd-table-grid article{position:relative;min-height:92px;padding:19px;border:1px solid color-mix(in srgb,var(--erd-accent) 38%,var(--line));background:color-mix(in srgb,var(--erd-accent) 5%,var(--surface));display:flex;flex-direction:column;justify-content:space-between}.erd-table-grid article:after{content:"";position:absolute;right:10px;top:10px;width:5px;height:5px;border-radius:50%;background:var(--erd-accent);box-shadow:0 0 10px var(--erd-accent)}.erd-table-grid small{color:var(--erd-accent);font:600 9px 'Space Grotesk';letter-spacing:.13em}.erd-table-grid b{overflow-wrap:anywhere;font:600 clamp(12px,1.4vw,16px) 'Space Grotesk';letter-spacing:.035em}
+[data-theme="light"] .erd-modal-backdrop{background:rgba(16,28,24,.42)}[data-theme="light"] .erd-modal-panel{background:#fbfdfc}[data-theme="light"] .erd-table-grid article{background:color-mix(in srgb,#fff 92%,var(--erd-accent))}
+@media(max-width:850px){.erd-table-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){.erd-modal{padding:10px}.erd-modal-panel{max-height:95vh}.erd-modal-panel>header{min-height:86px;padding:18px}.erd-modal-content{padding:22px 18px}.erd-table-grid{grid-template-columns:1fr 1fr;gap:8px}.erd-table-grid article{min-height:78px;padding:14px}.erd-modal-content>p{font-size:12px;margin-bottom:24px}}
+
+/* Interactive ERD canvas: draggable tables, relationship lines and zoom. */
+.erd-modal-content{padding:clamp(24px,4vw,48px)}
+.erd-guide{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-bottom:24px}.erd-guide>p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}.erd-controls{display:flex;align-items:center;gap:7px;flex:0 0 auto}.erd-controls button,.erd-controls output{height:36px;min-width:38px;padding:0 11px;border:1px solid var(--line);background:var(--surface);color:var(--text);display:grid;place-items:center;font:600 11px 'Space Grotesk';letter-spacing:.08em}.erd-controls button{cursor:pointer}.erd-controls button:hover{background:var(--erd-accent);border-color:var(--erd-accent);color:#fff}.erd-controls output{min-width:58px;color:var(--erd-accent)}
+.erd-canvas{position:relative;height:min(590px,62vh);overflow:auto;border:1px solid color-mix(in srgb,var(--erd-accent) 28%,var(--line));background:linear-gradient(color-mix(in srgb,var(--erd-accent) 5%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--erd-accent) 5%,transparent) 1px,transparent 1px),color-mix(in srgb,var(--erd-accent) 2%,var(--surface));background-size:30px 30px;overscroll-behavior:contain;cursor:grab;touch-action:none;transition:background-color .2s,border-color .2s,box-shadow .2s}
+.erd-canvas.is-panning{cursor:grabbing;border-color:color-mix(in srgb,var(--erd-accent) 70%,var(--line));background-color:color-mix(in srgb,var(--erd-accent) 9%,var(--surface));box-shadow:inset 0 0 45px color-mix(in srgb,var(--erd-accent) 12%,transparent)}
+.erd-viewport{position:relative;transform-origin:top left}.erd-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}.erd-lines line{stroke:color-mix(in srgb,var(--erd-accent) 52%,var(--line));stroke-width:1.25;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 3px color-mix(in srgb,var(--erd-accent) 25%,transparent))}
+.erd-table-grid{position:absolute;inset:0;display:block;background:none}.erd-table-grid article{position:absolute;width:180px;height:72px;min-height:0;padding:13px 15px;cursor:grab;touch-action:none;user-select:none;will-change:transform;transition:background-color .18s,border-color .18s,box-shadow .18s}.erd-table-grid article:hover{border-color:color-mix(in srgb,var(--erd-accent) 72%,var(--line));box-shadow:0 0 18px color-mix(in srgb,var(--erd-accent) 12%,transparent)}.erd-table-grid article.is-dragging{z-index:5;cursor:grabbing;color:#fff;background:color-mix(in srgb,var(--erd-accent) 72%,#17201e);border-color:color-mix(in srgb,var(--erd-accent) 85%,#fff);box-shadow:0 12px 30px rgba(0,0,0,.28),0 0 26px color-mix(in srgb,var(--erd-accent) 38%,transparent)}.erd-table-grid article.is-dragging small{color:#fff}.erd-table-grid article b{font-size:12px}
+[data-theme="light"] .erd-canvas{background-color:#f8fbfa}[data-theme="light"] .erd-table-grid article.is-dragging{color:#fff;background:color-mix(in srgb,var(--erd-accent) 82%,#26322e)}
+@media(max-width:650px){.erd-guide{align-items:flex-start;flex-direction:column}.erd-controls{width:100%}.erd-controls button:last-child{margin-left:auto}.erd-canvas{height:58vh}.erd-table-grid article{width:160px}.erd-modal-content{padding:18px}}
+
+/* Grab-to-scroll project detail pages. */
+.project-overlay .overlay-body{cursor:grab;transition:box-shadow .22s ease,background-color .22s ease}
+.project-overlay .overlay-body a,.project-overlay .overlay-body button,.project-overlay .entity-map{cursor:pointer}
+.project-overlay.is-page-dragging{cursor:grabbing;scroll-behavior:auto;user-select:none}
+.project-overlay.is-page-dragging .overlay-body{cursor:grabbing;box-shadow:inset 5px 0 0 color-mix(in srgb,var(--scroll-accent) 78%,transparent),inset -5px 0 0 color-mix(in srgb,var(--scroll-accent) 42%,transparent),inset 0 0 65px color-mix(in srgb,var(--scroll-accent) 7%,transparent)}
+
+/* Give the ERD workspace more breathing room on desktop. */
+.erd-modal{padding:clamp(12px,2vw,30px)}
+.erd-modal-panel{width:min(1480px,calc(100vw - 32px));max-height:95vh}
+.erd-canvas{height:min(740px,72vh)}
+
+@media(max-width:650px){
+  .erd-modal{padding:8px}
+  .erd-modal-panel{width:100%;max-height:97vh}
+  .erd-canvas{height:62vh}
+}
+
+/* Larger ERD stage and bilingual table cards. */
+.erd-table-grid article{width:220px;height:92px;padding:13px 15px;justify-content:flex-start}
+.erd-table-grid article b{margin-top:8px;font-size:12px;line-height:1.2}
+.erd-table-desc{display:block;margin-top:7px;color:var(--muted);font-size:10px;line-height:1.25}
+.erd-table-grid article.is-dragging .erd-table-desc{color:rgba(255,255,255,.82)}
+.erd-table-grid article.is-connected-table{border-color:color-mix(in srgb,var(--erd-accent) 82%,var(--line));background:color-mix(in srgb,var(--erd-accent) 16%,var(--surface));box-shadow:0 0 26px color-mix(in srgb,var(--erd-accent) 38%,transparent),inset 0 0 20px color-mix(in srgb,var(--erd-accent) 11%,transparent)}
+.erd-table-grid article.is-active-table{border-color:color-mix(in srgb,var(--erd-accent) 88%,#fff);box-shadow:0 0 30px color-mix(in srgb,var(--erd-accent) 44%,transparent),inset 0 0 20px color-mix(in srgb,var(--erd-accent) 15%,transparent)}
+.erd-lines line{transition:stroke .16s ease,stroke-width .16s ease,opacity .16s ease}
+.erd-lines:has(.is-connected-line) line:not(.is-connected-line){opacity:.18}
+.erd-lines line.is-connected-line{stroke:color-mix(in srgb,var(--erd-accent) 88%,#fff);stroke-width:2.4;opacity:1;filter:drop-shadow(0 0 6px var(--erd-accent))}
+[data-theme="light"] .erd-table-grid article.is-connected-table{background:color-mix(in srgb,#fff 75%,var(--erd-accent))}
+
+@media(max-width:650px){
+  .erd-table-grid article{width:190px;height:88px}
+  .erd-table-desc{font-size:9px}
+}
