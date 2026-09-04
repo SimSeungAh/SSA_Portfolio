@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const projects = [
   {
     no: "01",
-    type: "TEAM PROJECT · 2026",
+    type: "TEAM PROJECT · COMPLETE",
     name: "DOGO",
     tagline: "Find it again.",
     description: "분실물·실종자·실종동물을 하나의 위치 기반 흐름으로 연결한 통합 플랫폼입니다.",
@@ -17,7 +17,7 @@ const projects = [
   },
   {
     no: "02",
-    type: "TEAM PROJECT · IN DEVELOPMENT",
+    type: "TEAM PROJECT · COMPLETE",
     name: "POPQ",
     tagline: "Scan. Order. Enjoy.",
     description: "팝업스토어와 행사 현장에서 QR 하나로 메뉴 확인부터 주문까지 이어지는 현장형 주문 서비스입니다.",
@@ -28,10 +28,10 @@ const projects = [
   },
   {
     no: "03",
-    type: "PERSONAL PROJECT · DEVELOPMENT COMPLETE",
+    type: "PERSONAL PROJECT · COMPLETE",
     name: "FlowBoard",
     tagline: "Ideas in motion.",
-    description: "실시간 칸반과 화이트보드, 역할별 권한, 검색·활동 기록을 한 흐름으로 연결한 협업 플랫폼입니다. 기능 개발을 완료하고 최종 테스트를 앞두고 있습니다.",
+    description: "실시간 칸반과 화이트보드, 역할별 권한, 검색·활동 기록을 한 흐름으로 연결한 협업 플랫폼입니다.",
     role: "Planning · Full-Stack Development",
     stack: ["React", "TypeScript", "Spring Boot", "MySQL", "WebSocket"],
     accent: "violet",
@@ -39,7 +39,7 @@ const projects = [
   },
   {
     no: "04",
-    type: "PERSONAL PROJECT · 2026",
+    type: "PERSONAL PROJECT · COMPLETE",
     name: "EchoSnap",
     tagline: "See. Sort. Share.",
     description: "카메라 기반 재활용품 인식과 지역별 분리배출 안내를 연결한 생활 밀착형 앱입니다.",
@@ -82,10 +82,10 @@ function App() {
         </section>
 
         <section className="work" id="work">
-          <div className="section-heading"><p>SELECTED WORK</p><span>2025 — 2026</span></div>
+          <div className="section-heading"><p>SELECTED WORK</p><span>2026</span></div>
           <article className="featured-card">
             <div className="project-copy">
-              <div><span className="project-no">01</span><span className="project-type">TEAM PROJECT · 2026</span></div>
+              <div><span className="project-no">01</span><span className="project-type">TEAM PROJECT · COMPLETE</span></div>
               <h2>DOGO<span className="dot cyan">.</span></h2>
               <h3>Find it again.</h3>
               <p>분실물·실종자·실종동물을 하나의 위치 기반 흐름으로 연결했습니다. 자동 매칭과 실시간 소통으로 다시 찾는 시간을 줄입니다.</p>
@@ -124,7 +124,14 @@ function App() {
 
         <section className="skills">
           <p className="kicker">TOOLBOX</p>
-          <div className="skill-list"><span>JAVA</span><span>SPRING BOOT</span><span>REACT</span><span>JAVASCRIPT</span><span>MYSQL</span><span>WEBSOCKET</span><span>GIT</span><span>FIGMA</span></div>
+          <div className="toolbox-groups">
+            <div className="toolbox-group"><b>BACKEND</b><div className="skill-list"><span>JAVA</span><span>SPRING BOOT</span><span>SPRING MVC</span><span>SPRING DATA JPA</span><span>SPRING SECURITY</span><span>QUERYDSL</span><span>OAUTH2</span><span>JWT</span><span>WEBSOCKET · STOMP</span></div></div>
+            <div className="toolbox-group"><b>FRONTEND</b><div className="skill-list"><span>REACT</span><span>TYPESCRIPT</span><span>JAVASCRIPT</span><span>HTML5</span><span>CSS3</span><span>TAILWIND CSS</span><span>THYMELEAF</span><span>TANSTACK QUERY</span><span>ZUSTAND</span><span>DND KIT</span></div></div>
+            <div className="toolbox-group"><b>MOBILE</b><div className="skill-list"><span>FLUTTER</span><span>DART</span><span>FLUTTER SECURE STORAGE</span></div></div>
+            <div className="toolbox-group"><b>AI · DATA</b><div className="skill-list"><span>PYTHON</span><span>FASTAPI</span><span>TENSORFLOW LITE</span><span>PYMYSQL</span><span>OPENCSV</span></div></div>
+            <div className="toolbox-group"><b>DATABASE</b><div className="skill-list"><span>ORACLE</span><span>MYSQL</span><span>MONGODB</span><span>REDIS</span></div></div>
+            <div className="toolbox-group"><b>TOOLS · TEST</b><div className="skill-list"><span>DOCKER</span><span>GRADLE</span><span>VITE</span><span>SWAGGER</span><span>JUNIT</span><span>H2 TEST DB</span><span>LOMBOK</span><span>LEXORANK</span><span>KAKAO MAP</span><span>SPRING MAIL</span><span>GIT · GITHUB</span></div></div>
+          </div>
         </section>
       </main>
 
