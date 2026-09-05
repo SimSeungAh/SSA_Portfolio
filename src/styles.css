@@ -783,3 +783,87 @@ html:not([data-theme="light"]) .flow-case-board>header span{color:#aaa3bd}
   .flow-pageflip .flow-album-sheet button{padding:3px 3px 25px!important}
   .flow-pageflip .flow-album-sheet img{height:calc(100% - 25px)}
 }
+
+/* Implemented project screens */
+.implemented-pages{margin:90px 0 100px;--screen-accent:var(--amber)}
+.echo-implemented{--screen-accent:var(--pink)}
+.implemented-pages>header{padding-bottom:36px;border-bottom:1px solid var(--line)}
+.implemented-pages>header .kicker{color:var(--screen-accent)}
+.implemented-pages>header h3{font-size:clamp(30px,4vw,56px);line-height:1.25;letter-spacing:-.05em;margin:22px 0}
+.implemented-pages>header>p:last-child{color:var(--muted);font-size:14px;line-height:1.8}
+.implemented-row{display:grid;grid-template-columns:minmax(200px,.65fr) minmax(0,2fr);gap:48px;padding:56px 0;border-bottom:1px solid var(--line);align-items:start}
+.implemented-copy>span{color:var(--screen-accent);font:600 10px 'Space Grotesk';letter-spacing:.12em}
+.implemented-copy h4{font-size:24px;line-height:1.45;letter-spacing:-.04em;margin:20px 0 15px}
+.implemented-copy p{font-size:14px;line-height:1.9;color:var(--muted);margin:0;max-width:340px}
+.implemented-shots{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;align-items:start;padding:28px 20px;background:color-mix(in srgb,var(--screen-accent) 4%,var(--bg));border:1px solid color-mix(in srgb,var(--screen-accent) 20%,transparent)}
+.implemented-shots figure{margin:0;flex:1 1 155px;max-width:250px;min-width:0}
+.implemented-shots a{display:block;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);transition:transform .2s,border-color .2s}
+.implemented-shots a:hover{transform:translateY(-4px);border-color:var(--screen-accent)}
+.implemented-shots a:focus-visible{outline:2px solid var(--screen-accent);outline-offset:5px}
+.implemented-shots img{display:block;width:100%;height:auto}
+.implemented-shots figcaption{color:var(--muted);font-size:12px;line-height:1.6;padding-top:14px;text-align:center}
+.implemented-wide .implemented-shots{display:grid;grid-template-columns:1fr;gap:28px}
+.implemented-wide .implemented-shots figure{max-width:none;width:100%}
+.echosnap-main-visual .echo-home-device{width:min(270px,78%);padding:8px;border-radius:25px;overflow:hidden;height:auto;transform:none}
+.echo-home-device>img{display:block;width:100%;height:auto;border-radius:18px}
+.echo-home-caption{display:block;padding:12px 0 4px;color:var(--pink);font:600 8px 'Space Grotesk';letter-spacing:.14em;text-align:center}
+@media(max-width:1000px){.implemented-row{grid-template-columns:1fr;gap:28px}.implemented-copy p{max-width:650px}}
+@media(max-width:560px){.implemented-pages{margin:55px 0}.implemented-row{padding:36px 0}.implemented-shots{gap:20px;padding:22px 12px}.implemented-shots figure{flex-basis:100%;max-width:250px}.implemented-copy h4{font-size:22px}.implemented-wide .implemented-shots{padding:12px}}
+@media(prefers-reduced-motion:reduce){.implemented-shots a{transition:none}}
+
+/* EchoSnap: a standalone handset, without the temporary display panel. */
+.project-visual.echosnap-main-visual,
+[data-theme="light"] .project-visual.echosnap-main-visual{background:transparent;border:0;box-shadow:none;clip-path:none;min-height:0;padding:24px 0 46px;overflow:visible;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.project-visual.echosnap-main-visual:before,.project-visual.echosnap-main-visual:after,.echosnap-main-visual .echo-panel-head{display:none}
+.echosnap-main-visual .echo-home-device{width:min(300px,85%);padding:10px 9px 8px;background:#151217;border:2px solid #60525b;border-radius:38px;box-shadow:0 25px 55px #0005,inset 0 0 0 2px #ffffff12;position:relative}
+.echosnap-main-visual .echo-home-device>img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain;border:0;border-radius:27px;box-shadow:none}
+.echosnap-main-visual .echo-home-caption{padding:13px 0 8px}
+.echosnap-main-visual .visual-label{position:static;margin-top:24px;border:0;background:transparent;box-shadow:none;color:var(--pink)}
+
+/* POPQ: numbered, connected order steps on warm ticket-like mounts. */
+.popq-implemented .implemented-shots{background:none;border:0;padding:12px 0;gap:26px;counter-reset:popq-screen}
+.popq-implemented .implemented-shots figure{counter-increment:popq-screen;position:relative;padding:16px 10px 12px;background:color-mix(in srgb,var(--amber) 9%,var(--surface));border-top:2px solid var(--amber);border-bottom:1px dashed color-mix(in srgb,var(--amber) 45%,transparent);border-radius:4px}
+.popq-implemented .implemented-shots figure:before{content:counter(popq-screen,decimal-leading-zero);display:block;margin-bottom:12px;font:600 11px 'Space Grotesk';color:var(--amber);letter-spacing:.14em}
+.popq-implemented .implemented-shots a{border-radius:8px}
+.popq-implemented .implemented-shots figcaption{text-align:left;color:var(--text)}
+
+/* EchoSnap: freestanding phones on alternating stages of the journey. */
+.echo-implemented .implemented-row{grid-template-columns:1fr;gap:30px}
+.echo-implemented .implemented-copy{max-width:720px;border-left:2px solid var(--pink);padding-left:22px}
+.echo-implemented .implemented-copy p{max-width:650px}
+.echo-implemented .implemented-shots{border:0;background:none;padding:18px 0 30px;gap:clamp(24px,5vw,70px)}
+.echo-implemented .implemented-shots figure{max-width:230px}
+.echo-implemented .implemented-shots a{padding:8px;background:#171318;border:1px solid #78616c;border-radius:30px;box-shadow:0 18px 35px #0003}
+.echo-implemented .implemented-shots img{border-radius:22px}
+.echo-implemented .implemented-row:nth-of-type(even):not(.implemented-wide) .implemented-copy{margin-left:auto;text-align:right;border-left:0;border-right:2px solid var(--pink);padding-left:0;padding-right:22px}
+.echo-implemented .implemented-shots figure:nth-child(2){margin-top:30px}
+.echo-implemented .implemented-wide .implemented-shots{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.echo-implemented .implemented-wide .implemented-shots figure{max-width:none;margin:0}
+.echo-implemented .implemented-wide .implemented-shots a{border-radius:10px;padding:22px 7px 7px;background:var(--surface)}
+.echo-implemented .implemented-wide .implemented-shots img{border-radius:3px}
+
+/* Keep StPageFlip centered and leave real paper available for dragging. */
+.flow-album-grid{display:flex!important;align-items:center;justify-content:center}
+.flow-pageflip{flex:none;margin-inline:auto;max-width:100%;min-width:0!important}
+.flow-pageflip .stf__wrapper{margin-inline:auto}
+.flow-album-grid .flow-book-edge{display:none!important}
+.flow-page-inner{padding:42px 30px;gap:20px;cursor:grab}
+.flow-pageflip .--left .flow-page-inner{padding-left:70px}
+.flow-pageflip .--right .flow-page-inner{padding-right:70px}
+.flow-page-inner:active{cursor:grabbing}
+.flow-pageflip .flow-album-sheet button{cursor:zoom-in}
+@media(max-width:720px){.flow-page-inner{padding:30px 12px;gap:12px}.flow-pageflip .--left .flow-page-inner{padding-left:38px}.flow-pageflip .--right .flow-page-inner{padding-right:38px}}
+@media(max-width:560px){.echo-implemented .implemented-wide .implemented-shots{grid-template-columns:1fr}.echo-implemented .implemented-shots figure:nth-child(2){margin-top:0}.echo-implemented .implemented-row:nth-of-type(even):not(.implemented-wide) .implemented-copy{margin-left:0;text-align:left;border-right:0;border-left:2px solid var(--pink);padding:0 0 0 22px}}
+
+/* Scale the EchoSnap handset with its project column. */
+.echosnap-main-visual .echo-home-device{width:min(440px,88%)}
+@media(max-width:600px){.echosnap-main-visual .echo-home-device{width:min(360px,88%)}}
+
+/* Main mobile projects share the same handset scale; preserve full screenshots. */
+.popq-featured{grid-template-columns:minmax(280px,.65fr) minmax(0,1.35fr);gap:3vw}
+.popq-main-screens{display:flex;justify-content:center;align-items:start;gap:24px;padding:12px 0 24px}
+.popq-main-screens figure{flex:0 1 440px;width:clamp(240px,24vw,440px);max-width:440px;min-width:0}
+.popq-main-visual .popq-main-screens img{display:block;width:100%;height:auto!important;max-height:none;aspect-ratio:auto!important;object-fit:contain;object-position:center}
+.echosnap-main-visual .echo-home-device{width:clamp(240px,24vw,440px);max-width:88%}
+@media(max-width:1000px){.popq-featured{grid-template-columns:1fr}.popq-main-screens figure{flex:0 1 360px;width:min(360px,44%)}.echosnap-main-visual .echo-home-device{width:min(360px,88%)}}
+@media(max-width:600px){.popq-main-screens{flex-direction:column;align-items:center;gap:32px}.popq-main-screens figure{flex:none;width:min(360px,88%);padding:35px 9px 14px}.popq-main-visual .popq-main-screens img{border-radius:24px}}
