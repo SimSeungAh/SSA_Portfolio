@@ -518,13 +518,13 @@
       function syncScrollAccent(){
         const viewportCenter=window.innerHeight*.5;
         const workBounds=workSection.getBoundingClientRect();
-        let activeProject='dogo';
+        let activeProject='main';
         if(workBounds.top<window.innerHeight*.72&&workBounds.bottom>window.innerHeight*.28){
           activeProject=scrollProjects.reduce((closest,project)=>{
             const bounds=project.getBoundingClientRect();
             const distance=Math.abs(bounds.top+bounds.height*.5-viewportCenter);
             return distance<closest.distance?{name:project.dataset.scrollProject,distance}:closest;
-          },{name:'dogo',distance:Infinity}).name;
+          },{name:'main',distance:Infinity}).name;
         }
         document.documentElement.dataset.scrollProject=activeProject;
         scrollAccentFrame=undefined;
